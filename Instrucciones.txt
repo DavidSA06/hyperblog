@@ -1,0 +1,22 @@
+git init: Prepara la carpeta para git.
+
+git status: Ver el estado del proyecto.
+
+git add file: Añade un archivo al stage, se hace después de hacer modificaciones, antes del commit.
+git add .: Añade todos los archivos de la carpeta
+
+git rm file: Nada si el archivo esta en el stage.
+
+git rm --cached file: Borrar el archivo de la memoria RAM, del stage.
+
+git commit -m "mensaje": Mandar al repositorio, junto con un mensaje.
+
+git config: Ver la lista de las configuraciones de git.
+
+git --list: La configuración del git.
+
+git --list --show-origin: Mostrar donde estan las configuraciones guardadas.
+
+git config --global user.name "nombre": Cambiar la configuración sobre tu nombre.
+
+git config --global user.email "correo": Cambiar la configuración sobre tu correo.
