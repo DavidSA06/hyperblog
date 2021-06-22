@@ -43,6 +43,12 @@ git checkout "nombre de rama": Cambiar de rama
 git branch: Revisar que ramas existen y cual es la actual.
 git branch nombre: Crear rama.
 
+git remote add origin dirección: Enlazar un repositorio remoto
+git remote: revisar repositorios remotos
+git remote -v: revisar repositorios remotos de manera verbal
+
+git push origin master
+
 
 
 
