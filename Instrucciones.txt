@@ -10,6 +10,7 @@ git rm file: Nada si el archivo esta en el stage. (Ver nota)
 git rm --cached file: Borrar el archivo de la memoria RAM, del stage.
 
 git commit -m "mensaje": Mandar al repositorio, junto con un mensaje.
+git commit -am "mensaje": Mandar al repositorio sin hacer add, junto con un mensaje.
 
 git config: Ver la lista de las configuraciones de git.
 
@@ -39,6 +40,7 @@ git checkout número file: Podremos ver el archivo en la versión del indicador.
 git checkout master file: Podremos ver el archivo en la versión del master.
 git checkout "nombre de rama": Cambiar de rama
 
+git branch: Revisar que ramas existen y cual es la actual.
 git branch nombre: Crear rama.
 
 
