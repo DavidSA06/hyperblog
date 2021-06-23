@@ -6,7 +6,6 @@ git add file: Añade un archivo al stage, se hace después de hacer modificacion
 git add .: Añade todos los archivos de la carpeta.
 
 git rm file: Nada si el archivo esta en el stage. (Ver nota)
-
 git rm --cached file: Borrar el archivo de la memoria RAM, del stage.
 
 git commit -m "mensaje": Mandar al repositorio, junto con un mensaje.
@@ -15,12 +14,11 @@ git commit -am "mensaje": Mandar al repositorio sin hacer add, junto con un mens
 git config: Ver la lista de las configuraciones de git.
 
 git --list: La configuración del git.
-
 git --list --show-origin: Mostrar donde estan las configuraciones guardadas.
 
 git config --global user.name "nombre": Cambiar la configuración sobre tu nombre.
-
 git config --global user.email "correo": Cambiar la configuración sobre tu correo.
+git config --global init.defaultBranch main: Cambiar rama principal a main por defecto.
 
 git log: Ver todo el historial de cambios
 git log file: Ver el historial de cambios de un archivo
@@ -33,7 +31,6 @@ git diff: Ver diferencias actuales.
 git diff número número: Ver diferencias entre diferentes versiones.
 
 git reset número --hard: TODO vuelve a una versión anterior. (Ver nota)
-
 git reset número --soft: El directorio de trabajo vuelve a la versión anterior pero el staging sigue intacto.
 
 git checkout número file: Podremos ver el archivo en la versión del indicador.
@@ -47,7 +44,10 @@ git remote add origin dirección: Enlazar un repositorio remoto
 git remote: revisar repositorios remotos
 git remote -v: revisar repositorios remotos de manera verbal
 
-git push origin master
+git push origin master: Enviar al repositorio remoto los cambios.
+
+git pull origin master: Traer el repositorio remoto.
+git pull origin master --allow-unrelated-histories Trea el repositorio remoto auqnue haya hisotrias no relacionadas (archivos sobrantes).
 
 
 
