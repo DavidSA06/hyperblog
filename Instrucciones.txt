@@ -68,6 +68,11 @@ git push origin :refs/tags/nombre: Comando interno de github que borra el tag.
 
 gitk: Abre una ventana con una interfaz gráfica para ver las ramas de manera gráfica.
 
+git clone URL: Clona un repositorio remoto.
+
+Ctrl + shift + R: Fuerza el refrescar de página para ver los binarios modificados
+
+
 
 SSH
 
