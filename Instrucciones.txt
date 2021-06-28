@@ -70,6 +70,9 @@ gitk: Abre una ventana con una interfaz gráfica para ver las ramas de manera gr
 
 git clone URL: Clona el repositorio remoto.
 
+Ctrl + shift + R: Fuerza el refrescar de página para ver los binarios modificados
+
+
 SSH
 
 Generar una llave SSH
@@ -162,7 +165,3 @@ sí con los últimos en los que hicimos commit) y no habremos perdido nada.
 Conclusión: Lo mejor que puedes hacer para salvar tu puesto y evitar un 
 incendio en tu trabajo es conocer muy bien la diferencia y los riesgos de 
 todos los comandos de Git.
-
-
-
-
