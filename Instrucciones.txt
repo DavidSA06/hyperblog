@@ -1,3 +1,5 @@
+GIT
+
 git init: Prepara la carpeta para git.
 
 git status: Ver el estado del proyecto.
@@ -20,20 +22,28 @@ git config --global user.name "nombre": Cambiar la configuración sobre tu nombr
 git config --global user.email "correo": Cambiar la configuración sobre tu correo.
 git config --global init.defaultBranch main: Cambiar rama principal a main por defecto.
 
-git log: Ver todo el historial de cambios
+git log: Ver el historial de cambios
 git log file: Ver el historial de cambios de un archivo
 git log file --stat: Ver los cambios específicos en los archivos.
+git log --all: Ver todo el historial de cambios
+git log --all --graph: Ver todo el historial de cambios graficado con ramas.
+git log --all --graph --decorate --oneline: Ver todo el historial de cambios graficado con ramas en una sola linea
+
+alias nombre="instruccion": Abreviar una instruccion
 
 git show: Mostrar el ultimo cambio.
 git show file: Mostrar los cambios.
+git show-ref --tags: Mostrar los hashes junto a los tags.
+git show-branch: Ver ramas existentes y su historia.
+git show-branch -all: Ver ramas existentes con un poco más de datos.
 
 git diff: Ver diferencias actuales.
-git diff número número: Ver diferencias entre diferentes versiones.
+git diff hash hash: Ver diferencias entre diferentes versiones.
 
-git reset número --hard: TODO vuelve a una versión anterior. (Ver nota)
-git reset número --soft: El directorio de trabajo vuelve a la versión anterior pero el staging sigue intacto.
+git reset hash --hard: TODO vuelve a una versión anterior. (Ver nota)
+git reset hash --soft: El directorio de trabajo vuelve a la versión anterior pero el staging sigue intacto.
 
-git checkout número file: Podremos ver el archivo en la versión del indicador.
+git checkout hash file: Podremos ver el archivo en la versión del indicador.
 git checkout master file: Podremos ver el archivo en la versión del master.
 git checkout "nombre de rama": Cambiar de rama
 
@@ -44,12 +54,33 @@ git remote add origin dirección: Enlazar un repositorio remoto
 git remote: revisar repositorios remotos
 git remote -v: revisar repositorios remotos de manera verbal
 
-git push origin master: Enviar al repositorio remoto los cambios.
+git push origin main: Enviar al repositorio remoto los cambios.
+git push origin --tags: Enviar al repositorio remoto los tags.
 
-git pull origin master: Traer el repositorio remoto.
-git pull origin master --allow-unrelated-histories Trea el repositorio remoto auqnue haya hisotrias no relacionadas (archivos sobrantes).
+git pull origin main: Traer el repositorio remoto.
+git pull origin main: --allow-unrelated-histories Trea el repositorio remoto auqnue haya hisotrias no relacionadas (archivos sobrantes).
+
+git tag: Ver tags existentes
+git tag -a v0.1 -m "mensaje" hash: Colocar una nueva etiqueta (-add)
+git tag -d nombre: Borrar tag (-delete)
+
+git push origin :refs/tags/nombre: Comando interno de github que borra el tag.
+
+gitk: Abre una ventana con una interfaz gráfica para ver las ramas de manera gráfica.
+
+git clone URL: Clona el repositorio remoto.
+
+Ctrl + shift + R: Fuerza el refrescar de página para ver los binarios modificados
 
 
+SSH
+
+Generar una llave SSH
+ssh-keygen -t:(t, especificar algoritmo rsa; b, complejidad de la llave;C, correo)
+
+eval $(ssh-agent -s): evaluar que el comando se dispare
+
+git remote set-url origin enlace de repositorio: Cambiar la url
 
 
 
@@ -134,7 +165,3 @@ sí con los últimos en los que hicimos commit) y no habremos perdido nada.
 Conclusión: Lo mejor que puedes hacer para salvar tu puesto y evitar un 
 incendio en tu trabajo es conocer muy bien la diferencia y los riesgos de 
 todos los comandos de Git.
-
-
-
-
