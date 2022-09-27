@@ -108,6 +108,7 @@ git blame archivo: Ver quien ha cambiado las líneas de un archivo.
 git blame -c archivo: Ver una mejor identación.
 git blame archivo -lrenglón,renglón: Ver quien modificó los renglones de un archivo.
 
+git clone dirección(SSH): clonar un repositorio a tu computadora.
 
 SSH
 
