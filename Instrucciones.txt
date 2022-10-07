@@ -122,11 +122,14 @@ git tag -d nombre: Borrar tag (-delete).
 SSH
 
 Generar una llave SSH
-ssh-keygen -t:(t, especificar algoritmo rsa; b, complejidad de la llave;C, correo)
+ssh-keygen -t:(t, especificar algoritmo rsa; b, complejidad de la llave; C, correo).
+ssh-keygen -t rsa -b 4096 -C "ejemplo@correo.com"
 
-eval $(ssh-agent -s): evaluar que el comando se dispare
+eval $(ssh-agent -s): evaluar que el comando se dispare, comprobar el funcionamiento.
 
-git remote set-url origin enlace de repositorio: Cambiar la url
+ssh-copy-id correo: copiar la clave pública.
+
+git remote set-url origin enlace de repositorio: Cambiar la url/
 
 
 Nota:
