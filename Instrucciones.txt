@@ -37,7 +37,7 @@ git show: Mostrar el ultimo cambio.
 git show file: Mostrar los cambios.
 git show-ref --tags: Mostrar los hashes junto a los tags.
 git show-branch: Ver ramas existentes y su historia.
-git show-branch -all: Ver ramas existentes con un poco más de datos.
+git show-branch --all: Ver ramas existentes con un poco más de datos.
 
 git diff: Ver diferencias actuales.
 git diff hash hash: Ver diferencias entre diferentes versiones.
