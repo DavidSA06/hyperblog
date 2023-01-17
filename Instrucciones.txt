@@ -22,6 +22,7 @@ git branch -a: Ver todas las ramas.
 git checkout hash file: Podremos ver el archivo en la versión del indicador.
 git checkout master file: Podremos ver el archivo en la versión del master.
 git checkout "nombre de rama": Cambiar de rama.
+git checkout -b "nueva rama": copia la presente rama en una nueva.
 
 git cherry-pick hash: Trae un commit cualquiera de otra rama y lo une automáticamente.
 
