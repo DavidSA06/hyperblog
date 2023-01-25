@@ -83,6 +83,7 @@ git reflog: lista TODO, incluso lo borrado.
 git remote add origin dirección: Enlazar un repositorio remoto.
 git remote: revisar repositorios remotos.
 git remote -v: revisar repositorios remotos de manera verbal.
+git remote set-head origin "rama": cambiar la dirección por defecto de la rama remota.
 
 git reset hash --hard: TODO vuelve a una versión anterior. (Ver nota).
 git reset hash --soft: El directorio de trabajo vuelve a la versión anterior pero el staging sigue intacto.
