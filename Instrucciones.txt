@@ -121,7 +121,7 @@ SSH
 
 Generar una llave SSH
 ssh-keygen -t:(t, especificar algoritmo rsa; b, complejidad de la llave; C, correo).
-ssh-keygen -t rsa -b 4096 -C "ejemplo@correo.com"
+ssh-keygen -t rsa -b 4096 -C "ejemplo@correo. com"
 
 eval $(ssh-agent -s): evaluar que el comando se dispare, comprobar el funcionamiento.
 
