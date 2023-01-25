@@ -9,20 +9,21 @@ gitk: Abre una ventana con una interfaz gráfica para ver las ramas de manera gr
 git add file: Añade un archivo al stage, se hace después de hacer modificaciones, antes del commit.
 git add .: Añade todos los archivos de la carpeta.
 
-git blame archivo: Ver quien ha cambiado las líneas de un archivo.
-git blame -c archivo: Ver una mejor identación.
-git blame archivo -lrenglón,renglón: Ver quien modificó los renglones de un archivo.
+git blame "archivo": Ver quien ha cambiado las líneas de un archivo.
+git blame "-c archivo": Ver una mejor identación.
+git blame "archivo" -l renglón,renglón: Ver quien modificó los renglones de un archivo.
 
 git branch: Revisar que ramas existen y cual es la actual.
 git branch nombre: Crear rama.
+git branch -a: Ver todas las ramas.
 git branch -D nombre: Borrar rama.
 git branch -r: Ver ramas remotas.
-git branch -a: Ver todas las ramas.
+git branch nombre -c: copia la rama.
 
 git checkout hash file: Podremos ver el archivo en la versión del indicador.
 git checkout master file: Podremos ver el archivo en la versión del master.
-git checkout "nombre de rama": Cambiar de rama.
-git checkout -b "nueva rama": copia la presente rama en una nueva.
+git checkout "rama": Cambiar de rama.
+git checkout -b " nueva rama": copia la presente rama en una nueva.
 
 git cherry-pick hash: Trae un commit cualquiera de otra rama y lo une automáticamente.
 
@@ -44,6 +45,8 @@ git config --global alias.abreviación "instrucción" : Hacer una nueva instrucc
 git diff: Ver diferencias actuales.
 git diff hash hash: Ver diferencias entre diferentes versiones.
 
+git fetch: Actualiza el registro de GitHub en las ramas locales sin hacer cambio a los archivos.
+
 git grep palabra: Muestra cuantas veces aparece una palabra y en donde.
 git grep -n palabra: Muestra el renglón en el que aparece la palabra.
 git grep -c palabra: Muestra el numero de apariciones de la palabra en cada archivo.
@@ -62,27 +65,18 @@ git log --all --graph: Ver todo el historial de cambios graficado con ramas.
 git log --all --graph --decorate --oneline: Ver todo el historial de cambios graficado con ramas en una sola linea.
 git log -S "palabra": Muestra todas las veces que aparece una palabra en un commit.
 
-<<<<<<< HEAD
-alias nombre="instruccion": Abreviar una instruccion.
+git merge "rama": mezcla los cambios de la rama escrita a la actual.
 
-git show: Mostrar el ultimo cambio.
-git show file: Mostrar los cambios.
-git show-ref --tags: Mostrar los hashes junto a los tags.
-git show-branch: Ver ramas existentes y su historia.
-git show-branch --all: Ver ramas existentes con un poco más de datos.
-
-git diff: Ver diferencias actuales.
-git diff hash hash: Ver diferencias entre diferentes versiones.
-=======
+git pull "remoto" "rama": sintaxis.
 git pull origin main: Traer el repositorio remoto.
 git pull origin main --allow-unrelated-histories: Trae el repositorio remoto auqnue haya hisotrias no relacionadas (archivos sobrantes).
->>>>>>> e4f565603f25d61e85c25271bcb1e5a0eb8b248d
 
+git push "remoto" "rama": sintaxis
 git push origin main: Enviar al repositorio remoto los cambios.
 git push origin --tags: Enviar al repositorio remoto los tags.
 git push origin :refs/tags/nombre: Comando interno de github que borra el tag.
 
-git rebase rama: reescribe la historia (primero desde la rama experimental y al final desde main).
+git rebase "rama": reescribe la historia (primero desde la rama experimental y al final desde main).
 
 git reflog: lista TODO, incluso lo borrado.
 
@@ -92,6 +86,8 @@ git remote -v: revisar repositorios remotos de manera verbal.
 
 git reset hash --hard: TODO vuelve a una versión anterior. (Ver nota).
 git reset hash --soft: El directorio de trabajo vuelve a la versión anterior pero el staging sigue intacto.
+
+git restore "archivo": Restaura el archivo a la versión anterior.
 
 git rm file: Nada si el archivo esta en el stage. (Ver nota).
 git rm --cached file: Borrar el archivo de la memoria RAM, del stage.
@@ -104,7 +100,7 @@ git shortlog -sn -all --no-merges: Muestra todos los commits sin tomar en cuenta
 git stash: guardar cambios temporales no listos para un commit, dejando todo como estaba en el ultimo commit.
 git stash list: Ver lo guardado en un stash.
 git stash pop: Regresar a los cambios hechos en el stash.
-git stash (nueva)rama: Mover las modificaciones al stash de otra rama.
+git stash "nueva rama": Mover las modificaciones al stash de otra rama.
 git stash drop: borrar los cambios en el stash.
 
 git status: Ver el estado del proyecto.
@@ -133,6 +129,11 @@ ssh-copy-id correo: copiar la clave pública.
 git remote set-url origin enlace de repositorio: Cambiar la url/
 
 
+sintaxis de mensaje: tipo emoji mensaje(iniciar con minúscula y verbo) descripción_larga
+tipo: feat/fix
+emoji: :rocket:
+
+
 Nota:
 
 Git reset y git rm son comandos con utilidades muy diferentes, pero aún así 
@@ -148,9 +149,9 @@ Recuerda que git rm no puede usarse así nomás. Debemos usar uno de los flags
 para indicarle a Git cómo eliminar los archivos que ya no necesitamos en la 
 última versión del proyecto:
 
-    git rm --cached: Elimina los archivos del área de Staging y del próximo 
+git rm --cached: Elimina los archivos del área de Staging y del próximo 
 commit pero los mantiene en nuestro disco duro.
-    git rm --force: Elimina los archivos de Git y del disco duro. Git siempre 
+git rm --force: Elimina los archivos de Git y del disco duro. Git siempre 
 guarda todo, por lo que podemos acceder al registro de la existencia de los 
 archivos, de modo que podremos recuperarlos si es necesario (pero debemos usar 
 comandos más avanzados).
@@ -170,15 +171,16 @@ siempre). O, un poco más seguro, con el argumento --soft, que mantiene allí lo
 archivos del área de staging para que podamos aplicar nuestros últimos cambios 
 pero desde un commit anterior.
 
-    git reset --soft: Borramos todo el historial y los registros de Git pero 
+git reset --soft: Borramos todo el historial y los registros de Git pero 
 guardamos los cambios que tengamos en Staging, así podemos aplicar las últimas 
 actualizaciones a un nuevo commit.
-    git reset --hard: Borra todo. Todo todito, absolutamente todo. Toda la 
+
+git reset --hard: Borra todo. Todo todito, absolutamente todo. Toda la 
 información de los commits y del área de staging se borra del historial.
 
 ¡Pero todavía falta algo!
 
-    git reset HEAD: Este es el comando para sacar archivos del área de Staging. 
+git reset HEAD: Este es el comando para sacar archivos del área de Staging. 
 No para borrarlos ni nada de eso, solo para que los últimos cambios de estos 
 archivos no se envíen al último commit, a menos que cambiemos de opinión y los 
 incluyamos de nuevo en staging con git add, por supuesto.
